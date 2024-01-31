@@ -9,24 +9,20 @@ import UIKit
 
 class MainViewController: UICollectionViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     
     // MARK: - Navigation
-    
-    
     
     //MARK: - UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userAction", for: indexPath)
+        guard let cell = cell as? UserActionCell else { return UICollectionViewCell() }
+        
+        return cell
     }
     
     

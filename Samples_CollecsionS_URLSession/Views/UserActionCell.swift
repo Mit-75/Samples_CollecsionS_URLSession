@@ -7,6 +7,7 @@
 
 import UIKit
 
-class UserActionCell: UICollectionViewController {
+class UserActionCell: UICollectionViewCell {
+    @IBOutlet var userActionLabel: UILabel!
     
 }
