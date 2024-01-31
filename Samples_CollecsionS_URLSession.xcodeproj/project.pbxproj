@@ -13,12 +13,12 @@
 		33DD15552B69FC2E008064E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DD15542B69FC2E008064E3 /* Assets.xcassets */; };
 		33DD15582B69FC2E008064E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DD15562B69FC2E008064E3 /* LaunchScreen.storyboard */; };
 		33DD15612B69FCDE008064E3 /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15602B69FCDE008064E3 /* UserActionCell.swift */; };
-		33DD15632B69FDE2008064E3 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15622B69FDE1008064E3 /* CourseCell.swift */; };
 		33DD15662B69FED5008064E3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15652B69FED5008064E3 /* MainViewController.swift */; };
 		33DD15682B6A067F008064E3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15672B6A067F008064E3 /* ImageViewController.swift */; };
 		33DD156A2B6A06B9008064E3 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15692B6A06B9008064E3 /* CoursesViewController.swift */; };
 		33DD15732B6A0AEB008064E3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15722B6A0AEB008064E3 /* Course.swift */; };
 		33DD15762B6A13CC008064E3 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15752B6A13CC008064E3 /* DataStore.swift */; };
+		33DD157A2B6A7F93008064E3 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD15792B6A7F93008064E3 /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		33DD15572B69FC2E008064E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33DD15592B69FC2E008064E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD15602B69FCDE008064E3 /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
-		33DD15622B69FDE1008064E3 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		33DD15652B69FED5008064E3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		33DD15672B6A067F008064E3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		33DD15692B6A06B9008064E3 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		33DD15722B6A0AEB008064E3 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		33DD15752B6A13CC008064E3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		33DD15792B6A7F93008064E3 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				33DD15602B69FCDE008064E3 /* UserActionCell.swift */,
-				33DD15622B69FDE1008064E3 /* CourseCell.swift */,
+				33DD15792B6A7F93008064E3 /* CourseCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 				33DD156A2B6A06B9008064E3 /* CoursesViewController.swift in Sources */,
 				33DD154C2B69FC2B008064E3 /* AppDelegate.swift in Sources */,
 				33DD154E2B69FC2B008064E3 /* SceneDelegate.swift in Sources */,
-				33DD15632B69FDE2008064E3 /* CourseCell.swift in Sources */,
 				33DD15682B6A067F008064E3 /* ImageViewController.swift in Sources */,
+				33DD157A2B6A7F93008064E3 /* CourseCell.swift in Sources */,
 				33DD15762B6A13CC008064E3 /* DataStore.swift in Sources */,
 				33DD15662B69FED5008064E3 /* MainViewController.swift in Sources */,
 			);

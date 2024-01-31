@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="wHu-pl-OGl">
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="30" id="wHu-pl-OGl">
                             <size key="itemSize" width="340" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -59,10 +60,75 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Networking" id="lKo-hq-bJ4"/>
+                    <connections>
+                        <segue destination="nIt-w4-wat" kind="show" identifier="showImage" id="fIg-cs-IZ6"/>
+                        <segue destination="AbC-ua-2FU" kind="show" identifier="showCourses" id="QjJ-WS-ZPp"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7R-z3-Lr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1602" y="-18"/>
+        </scene>
+        <!--Courses-->
+        <scene sceneID="YEL-BS-Zxm">
+            <objects>
+                <tableViewController id="AbC-ua-2FU" customClass="CoursesViewController" customModule="Samples_CollecsionS_URLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="UJg-rc-4b5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="m5x-VN-O9B">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m5x-VN-O9B" id="s5r-wq-eW8" customClass="CoursesCell" customModule="Samples_CollecsionS_URLSession" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AbC-ua-2FU" id="nGJ-i2-yNo"/>
+                            <outlet property="delegate" destination="AbC-ua-2FU" id="3za-Wu-s4n"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Courses" id="R1J-l5-JYh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hZ-Tp-Ny2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="393"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="9cz-GT-imT">
+            <objects>
+                <viewController id="nIt-w4-wat" customClass="ImageViewController" customModule="Samples_CollecsionS_URLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="997-rt-e6V">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-5N-05L">
+                                <rect key="frame" x="0.0" y="155" width="393" height="697"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-gx-anI">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r08-r0-pkc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aqp-5N-05L" firstAttribute="top" secondItem="r08-r0-pkc" secondAttribute="top" id="GHy-vY-RWV"/>
+                            <constraint firstItem="SK3-gx-anI" firstAttribute="centerX" secondItem="997-rt-e6V" secondAttribute="centerX" id="Ogu-iY-WZM"/>
+                            <constraint firstAttribute="bottom" secondItem="Aqp-5N-05L" secondAttribute="bottom" id="QQR-j2-TmQ"/>
+                            <constraint firstItem="SK3-gx-anI" firstAttribute="centerY" secondItem="997-rt-e6V" secondAttribute="centerY" id="UJm-BM-9sZ"/>
+                            <constraint firstItem="Aqp-5N-05L" firstAttribute="trailing" secondItem="r08-r0-pkc" secondAttribute="trailing" id="dSL-2n-CUQ"/>
+                            <constraint firstItem="Aqp-5N-05L" firstAttribute="leading" secondItem="r08-r0-pkc" secondAttribute="leading" id="eHT-LJ-nFi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="T9g-4f-SJP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ek8-ks-zoA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2441.9847328244273" y="-296.47887323943661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="huq-lL-6a9">
@@ -86,6 +152,9 @@
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
