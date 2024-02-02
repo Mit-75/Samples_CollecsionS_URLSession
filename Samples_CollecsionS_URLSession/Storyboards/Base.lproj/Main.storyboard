@@ -114,7 +114,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r08-r0-pkc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="Aqp-5N-05L" firstAttribute="top" secondItem="r08-r0-pkc" secondAttribute="top" id="GHy-vY-RWV"/>
                             <constraint firstItem="SK3-gx-anI" firstAttribute="centerX" secondItem="997-rt-e6V" secondAttribute="centerX" id="Ogu-iY-WZM"/>
@@ -125,6 +125,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="T9g-4f-SJP"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="SK3-gx-anI" id="LPA-7P-7ta"/>
+                        <outlet property="imageView" destination="Aqp-5N-05L" id="kCb-bC-ReD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ek8-ks-zoA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,6 +159,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
