@@ -34,7 +34,6 @@ final class MainViewController: UICollectionViewController {
         switch userAction {
             
         case .showImage: performSegue(withIdentifier: "showImage", sender: nil)
-            
         case .fetchCourse:fetchCourse()
         case .fetchCourses: fetchCourses()
         case .aboutSwiftBook: fetchInfoAboutUs()
@@ -87,14 +86,61 @@ extension MainViewController {
     }
     
     private func fetchCourses() {
-        
+        URLSession.shared.dataTask(with: Link.coursesURL.url) { [weak self] data, _, error in
+            guard let self else { return }
+            guard let data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            do {
+                let courses = try JSONDecoder().decode([Course].self, from: data)
+                print(courses)
+                showAlert(withStatus: .success)
+            } catch {
+                print(error.localizedDescription)
+                showAlert(withStatus: .failed)
+            }
+        }.resume()
     }
     
     private func fetchInfoAboutUs() {
+        URLSession.shared.dataTask(with: Link.aboutUsURL.url) { [weak self]
+            data, _, error in
+            guard let self else { return }
+            guard let data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            do {
+                let sbInfo = try JSONDecoder().decode(SwiftBookInfo.self, from: data)
+                print(sbInfo)
+                showAlert(withStatus: .success)
+            } catch {
+                print(error.localizedDescription)
+                showAlert(withStatus: .failed)
+            }
+        }.resume()
         
     }
     
     private func fetchInfoAboutUsWithEmptyFields() {
+        URLSession.shared.dataTask(with: Link.aboutUsURL2.url) { [weak self]
+            data, _, error in
+            guard let self else { return }
+            guard let data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            do {
+                let sbInfo2 = try JSONDecoder().decode(SwiftBookInfo.self, from: data)
+                print(sbInfo2)
+                showAlert(withStatus: .success)
+            } catch {
+                print(error)
+                showAlert(withStatus: .failed)
+            }
+        }.resume()
         
     }
   
