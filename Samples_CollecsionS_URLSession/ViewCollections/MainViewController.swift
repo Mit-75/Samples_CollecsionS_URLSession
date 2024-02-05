@@ -42,6 +42,15 @@ final class MainViewController: UICollectionViewController {
         case .showCourses: performSegue(withIdentifier: "showCourses", sender: nil)
         }
     }
+    // MARK: - Private Methods
+    private func showAlert(withStatus status: Alert) {
+        let alert = UIAlertController(title: status.title, message: status.message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        DispatchQueue.main.async { [unowned self] in
+            present(alert, animated: true)
+        }
+    }
     
 }
     
@@ -58,9 +67,23 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Networking
 
 extension MainViewController {
-    
     private func fetchCourse() {
-        
+        URLSession.shared.dataTask(with: Link.courseURL.url) { [weak self]
+            data, _, error in
+            guard let self else { return }
+            guard let data else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            do {
+                let course = try JSONDecoder().decode(Course.self, from: data)
+                print(course)
+                showAlert(withStatus: .success)
+            } catch {
+                print(error.localizedDescription)
+                showAlert(withStatus: .failed)
+            }
+        }.resume()
     }
     
     private func fetchCourses() {
