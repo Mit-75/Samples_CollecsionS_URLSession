@@ -43,7 +43,7 @@ enum Link {
     var url: URL {
         switch self {
         case .imageURL:
-            return URL(string: "https://i.pinimg.com/originals/18/b3/8f/18b38fc3ff9894bc10946c9f1d2b3f09.jpg")!
+            return URL(string: "https://applelives.com/wp-content/uploads/2016/03/iPhone-SE-11.jpeg")!
         case .courseURL:
             return URL(string: "https://swiftbook.ru//wp-content/uploads/api/api_course")!
         case .coursesURL:

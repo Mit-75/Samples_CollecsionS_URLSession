@@ -8,5 +8,11 @@
 import UIKit
 
 class CoursesCell: UITableViewCell {
+  
+    @IBOutlet var courseImage: UIImageView!
+    @IBOutlet var courseNameLabel: UILabel!
+    @IBOutlet var numberOfLessons: UILabel!
+    @IBOutlet var numberOfTest: UILabel!
+    
     
 }

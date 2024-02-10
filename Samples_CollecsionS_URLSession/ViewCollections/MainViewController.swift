@@ -11,15 +11,13 @@ final class MainViewController: UICollectionViewController {
     
     let userActions = UserAction.allCases
     
-    
-    // MARK: - Navigation
-    
     //MARK: - UICollectionViewDataSource
     
+    /// Задаем колличество ячеек
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         userActions.count
     }
-    
+    /// Создаем ячейки, присваиваем наименования
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "userAction", for: indexPath)
         guard let cell = cell as? UserActionCell else { return UICollectionViewCell() }
@@ -28,11 +26,11 @@ final class MainViewController: UICollectionViewController {
     }
     
     // MARK: UICollectionViewDelegate
+    /// Присваиваем действия ячейкам
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let userAction = userActions[indexPath.item]
         
         switch userAction {
-            
         case .showImage: performSegue(withIdentifier: "showImage", sender: nil)
         case .fetchCourse:fetchCourse()
         case .fetchCourses: fetchCourses()
@@ -41,7 +39,9 @@ final class MainViewController: UICollectionViewController {
         case .showCourses: performSegue(withIdentifier: "showCourses", sender: nil)
         }
     }
+    
     // MARK: - Private Methods
+    /// Метод Алерт
     private func showAlert(withStatus status: Alert) {
         let alert = UIAlertController(title: status.title, message: status.message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
@@ -50,9 +50,8 @@ final class MainViewController: UICollectionViewController {
             present(alert, animated: true)
         }
     }
-    
 }
-    
+/// Делаем динамическую ширину ячейки 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,

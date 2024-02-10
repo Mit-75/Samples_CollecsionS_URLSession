@@ -23,9 +23,9 @@ class ImageViewController: UIViewController {
     }
     
     private func fetchImage() {
-        URLSession.shared.dataTask(with: Link.imageURL.url) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: Link.imageURL.url) { [weak self] data, _, error in
             guard let self else { return }
-            guard let data, let response else {
+            guard let data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
             }
